@@ -1,0 +1,39 @@
+
+.box {
+    @apply px-2 py-2 rounded;
+    height: 16rem;
+
+    section {
+        @apply bg-gray-darkest flex justify-center items-center  flex-col;
+        height: 100%;
+    }
+    h1 {
+        @apply text-2xl text-brand-orange;
+        font-weight: bold;
+    }
+    p {
+        @apply text-center text-xl text-brand-gray;
+        width: 80%;
+    }
+}
+
+.why {
+    @apply px-4 py-5 w-full;
+
+    section {
+        @apply items-start flex-col;
+        height: 100%;
+    }
+
+    span {
+        @apply text-black;
+    }
+
+    p {
+        @apply text-xl text-brand-gray;
+    }
+}
+
+.tag {
+    @apply text-black px-5 py-2 mx-2 rounded text-white bg-brand-gray mb-2;
+}

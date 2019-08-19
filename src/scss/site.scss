@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+@import '../../node_modules/font-awesome/scss/font-awesome.scss';
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@import './components.scss';
+
+body {
+    background: #f1f1f2;
+    font-family: 'Roboto', sans-serif;
+
+    background-image: url('/img/stanlix-symbol.png');
+    background-size: 30%;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
