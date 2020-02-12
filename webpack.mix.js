@@ -25,10 +25,11 @@ mix.js('src/js/site.js', 'public/js/')
     .setPublicPath('public')
     .webpackConfig({
         plugins: [
-            new LiveReloadPlugin(),
+            // new LiveReloadPlugin(),
             new HtmlWebpackPlugin({
                 template: 'src/index.html',
                 filename: 'index.html',
+                inject: false,
             })
         ],
     });
