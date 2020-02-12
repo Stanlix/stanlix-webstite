@@ -13,9 +13,8 @@ let HtmlWebpackPlugin = require('html-webpack-plugin')
  |
  */
 
-
-mix.js('src/js/site.js', 'public/js')
-    .sass('src/scss/site.scss', 'public/css')
+mix.js('src/js/site.js', 'public/js/')
+    .sass('src/scss/site.scss', 'public/css/')
     // .copy('src/index.html', 'public')
     .copyDirectory('src/img', 'public/img/')
     .copy('node_modules/font-awesome/fonts/', 'public/fonts')
@@ -23,15 +22,15 @@ mix.js('src/js/site.js', 'public/js')
     // .browserSync({
     //     proxy: 'stanlix.local'
     // });
+    .setPublicPath('public')
     .webpackConfig({
         plugins: [
             new LiveReloadPlugin(),
             new HtmlWebpackPlugin({
                 template: 'src/index.html',
-                filename: 'public/index.html',
+                filename: 'index.html',
             })
         ],
-
     });
 
 // Full API
