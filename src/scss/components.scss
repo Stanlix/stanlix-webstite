@@ -3,7 +3,7 @@
     @apply px-2 py-2 rounded;
     height: 16rem;
 
-    section {
+    .box-body {
         @apply bg-gray-darkest flex justify-center items-center  flex-col;
         height: 100%;
     }
