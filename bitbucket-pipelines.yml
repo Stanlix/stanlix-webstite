@@ -1,0 +1,30 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:13
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script: 
+          - npm install
+          - npm run production
+          - pipe: atlassian/aws-s3-deploy:0.4.0
+            variables:
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION: 'us-east-1'
+              S3_BUCKET: 'stanlixws-2020'
+              LOCAL_PATH: $BITBUCKET_CLONE_DIR/public
+              ACL: 'public-read'
+              # CONTENT_ENCODING: '<string>' # Optional.
+              # STORAGE_CLASS: '<string>' # Optional.
+              # CACHE_CONTROL: '<string>' # Optional.
+              # EXPIRES: '<timestamp>' # Optional.
+              # DELETE_FLAG: '<boolean>' # Optional.
+              # EXTRA_ARGS: '<string>' # Optional.
+              # DEBUG: '<boolean>' # Optional.
